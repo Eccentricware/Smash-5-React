@@ -1,0 +1,28 @@
+.fighter {
+  width: 142px;
+  height: 128px;
+  background-image: url(../../Images/RandomButton.png);
+  color: white;
+  border-style: solid;
+  border-width: 2px;
+  background-color: black;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.metric {
+  text-align: right;
+  position: relative;
+  right: 4px;
+  top: 2px;
+  font-weight: bold;
+  text-shadow: 0.2em 0.1em 0.1em black;
+}
+
+.name {
+  text-align: center;
+  position: relative;
+  font-weight: bold;
+  text-shadow: 0.2em 0.1em 0.1em black;
+  opacity: 1;
+}

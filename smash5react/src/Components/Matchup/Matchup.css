@@ -1,0 +1,46 @@
+.matchup {
+  position: absolute;
+  bottom: 64px;
+  right: 11px;
+  width: 430px;
+  display: grid;
+  grid-template: 132px 30px / repeat(3, 146px);
+}
+
+.vsFlairContainer {
+  position: relative;
+}
+
+.vsFlair {
+  background-image: url(../../Images/Vs.png);
+  width: 128px;
+  height: 128px;
+}
+
+.modeSelector {
+  font-weight: bold;
+}
+
+.opponentSelector {
+  font-weight: bold;
+}
+
+.random-btn {
+  font-weight: bold;
+}
+
+.victory-btn {
+  width: 50%;
+  height: 30px;
+  font-weight: bold;
+  color: white;
+  background-color: green;
+}
+
+.defeat-btn {
+  width: 50%;
+  height: 30px;
+  font-weight: bold;
+  color: white;
+  background-color: red;
+}

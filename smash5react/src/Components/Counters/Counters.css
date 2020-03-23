@@ -1,0 +1,15 @@
+div.countersAnchor {
+  position: absolute;
+  left: 50%;
+  bottom: 0%;
+  width: 792px;
+  padding-bottom: 25px;
+}
+
+div.counters {
+  position: absolute;
+  left: 82px;
+  bottom: 94px;
+  width: 792px;
+  height: 132px;
+}

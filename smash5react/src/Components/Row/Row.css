@@ -1,0 +1,6 @@
+.row {
+  width: 1584px;
+  display: grid;
+  position: relative;
+  grid-template: 132px / repeat(13, 146px);
+}

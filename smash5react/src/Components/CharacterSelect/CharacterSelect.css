@@ -1,0 +1,9 @@
+div.characterSelectContainer {
+  display: grid;
+  top: 11px;
+  left: 11px;
+  width: 1898px;
+  height: 762px;
+  grid-template: repeat(6, 132px) / 1fr;
+  position: relative;
+}

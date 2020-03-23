@@ -1,0 +1,23 @@
+.fighter-details-sheet {
+  position: absolute;
+  left: 5px;
+}
+
+.fighter-details-header {
+  text-align: center;
+  width: 1500px;
+  color: white;
+  display: grid;
+  grid-template-columns: 35px 150px 90px repeat(6, 125px);
+}
+
+.fighter-details {
+  width: 1500px;
+  color: white;
+  display: grid;
+  grid-template-columns: 35px 150px 90px repeat(6, 125px);
+}
+
+.number-column {
+  text-align: right;
+}
