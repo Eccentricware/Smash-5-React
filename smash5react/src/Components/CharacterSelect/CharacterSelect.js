@@ -12,7 +12,7 @@ class CharacterSelect extends React.Component {
         <Row fighters={this.props.roster.row4} opponent={this.props.opponent} opponentName={this.props.opponentName} counterRow={false} maxMetric={this.props.maxMetric}/>
         <Row fighters={this.props.roster.row5} opponent={this.props.opponent} opponentName={this.props.opponentName} counterRow={false} maxMetric={this.props.maxMetric}/>
         <Row fighters={this.props.roster.row6} opponent={this.props.opponent} opponentName={this.props.opponentName} counterRow={false} maxMetric={this.props.maxMetric}/>
-        <Row fighters={this.props.roster.row7} opponent={this.props.opponent} opponentName={this.props.opponentName} counterRow={false} maxMetric={this.props.maxMetric} style={{left: 219}}/>
+        <Row fighters={this.props.roster.row7} opponent={this.props.opponent} opponentName={this.props.opponentName} counterRow={false} maxMetric={this.props.maxMetric}/>
       </div>
     )
   }

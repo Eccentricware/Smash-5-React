@@ -10,6 +10,9 @@ class Fighter {
     this._playMetric = 10;
     this._favor = 10;
     this._rollingFavor = 10;
+    this._selectionChances = 0;
+    this._intendedChances = 0;
+    this._preferencePosition = 0;
     this._hasEchoPartner = hasEchoPartner;
     this._echoPartner = echoPartner;
     this._matchups = {};
@@ -51,6 +54,18 @@ class Fighter {
 
   get favor() {
     return this._favor;
+  }
+
+  get selectionChances() {
+    return this._selectionChances;
+  }
+
+  get intendedChances() {
+    return this._intendedChances;
+  }
+
+  get preferencePosition() {
+    return this._preferencePosition;
   }
 
   get hasEchoPartner() {
@@ -111,14 +126,14 @@ class Fighter {
   }
 
   increaseChampionRating(challengeMode) {
-    if (challengeMode == 1) {
+    if (challengeMode === 1) {
       if (this.inRematchFight) {
         this._championRating += 2;
       } else {
         this._championRating += 1;
         this._inRematchFight = true;
       }
-    } else if (challengeMode == 2) {
+    } else if (challengeMode === 2) {
       if (this.inRematchFight) {
         this._championRating += 1;
       } else {
@@ -193,6 +208,18 @@ class Fighter {
 
   resetFavor() {
     this._rollingFavor = this.favor;
+  }
+
+  updateSelectionChances(totalRosterFavor) {
+    this._selectionChances = Number.parseFloat(this.rollingFavor / totalRosterFavor * 100).toFixed(3);
+  }
+
+  setIntendedChances(chances) {
+    this._intendedChances = chances;
+  }
+
+  setPreferencePosition(position) {
+    this._preferencePosition = position;
   }
 
   get matchups() {

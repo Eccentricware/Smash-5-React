@@ -15,7 +15,7 @@ class Row extends React.Component {
       <div className="row" style={this.props.style}>
         {
           this.props.fighters.map(fighter => {
-            return <Fighter key={fighter.id} name={fighter.name} image={fighter.image} counterRow={this.props.counterRow} counterRating={fighter.matchups[this.props.opponent.keyName]} playMetric={fighter.playMetric} maxMetric={this.props.maxMetric} championRating={fighter.championRating}/>
+            return <Fighter key={fighter.id} name={fighter.name} image={fighter.image} counterRow={this.props.counterRow} counterRating={fighter.matchups[this.props.opponent.keyName]} playMetric={fighter.playMetric} maxMetric={this.props.maxMetric} championRating={fighter.championRating} selectionChances={fighter.selectionChances}/>
           })
         }
       </div>

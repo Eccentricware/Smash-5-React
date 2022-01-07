@@ -1,7 +1,7 @@
 .matchup {
   position: absolute;
-  bottom: 64px;
-  right: 11px;
+  bottom: 0px;
+  right: 18px;
   width: 430px;
   display: grid;
   grid-template: 132px 30px / repeat(3, 146px);

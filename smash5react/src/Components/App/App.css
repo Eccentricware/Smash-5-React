@@ -1,3 +1,19 @@
 body {
   background-color: black;
 }
+
+.fighter-groups-chances {
+  display: grid;
+  grid-template-columns: 100px 64px;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.group-chances-display {
+  color: white;
+  text-align: right;
+  font-weight: bold;
+  text-shadow: 0.2em 0.1em 0.1em black;
+  opacity: 1;
+}
