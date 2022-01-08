@@ -78,6 +78,12 @@ const hero = new Fighter(80, "Hero", "hero", "hero", Images.hero, false, null, I
 const banjoAndKazooie = new Fighter(81, "Banjo & Kazooie", "banjoAndKazooie", "banjo_and_kazooie", Images.banjoAndKazooie, false, null, Images.defaults.banjoAndKazooie);
 const terry = new Fighter(82, "Terry", "terry", "terry", Images.terry, false, null, Images.defaults.terry);
 const byleth = new Fighter(83, "Byleth", "byleth", "byleth", Images.byleth, false, null, Images.defaults.byleth);
+const minMin = new Fighter(84, "Min Min", 'minMin', 'minMin', Images.minMin, false, null, Images.defaults.minMin);
+const steve = new Fighter(85, "Steve", "steve", 'steve', Images.steve, false, null, Images.defaults.steve);
+const sephiroth = new Fighter(86, "Sephiroth", "sephiroth", 'sephiroth', Images.sephiroth, false, null, Images.defaults.sephiroth);
+const pyraAndMythra = new Fighter(87, "Pyra and Mythra", "pyraAndMythra", "pyra_and_mythra", Images.pyraAndMythra, false, null, Images.defaults.pyraAndMythra);
+const kazuya = new Fighter(88, "Kazuya", "kazuya", "kazuya", Images.kazuya, false, null, Images.defaults.kazuya);
+const sora = new Fighter(89, "Sora", "sora", "sora", Images.sora, false, null, Images.defaults.sora);
 const miiBrawler = new Fighter(56, "Mii Brawler", "miiBrawler", "mii_brawler", Images.miiBrawler, false, null, Images.defaults.miiBrawler);
 const miiSwordfighter = new Fighter(57, "Mii Swordfighter", "miiSwordfighter", "mii_swordfighter", Images.miiSwordfighter, false, null, Images.defaults.miiSwordfighter);
 const miiGunner = new Fighter(58, "Mii Gunner", "miiGunner", "mii_gunner", Images.miiGunner, false, null, Images.defaults.miiGunner);
@@ -92,20 +98,25 @@ const defaultOpponent = new Fighter(0, "Default Opponent", "defaultOpponent", "d
 //const charizard = new Fighter(40, "Charizard", "charizard", "charizard", defaultImg, defaultImg, defaultImg, defaultImg, defaultImg, defaultImg, defaultImg, defaultImg);
 const Roster = {
   fighters: {
-    all: [mario, donkeyKong, link, samus, darkSamus, yoshi, kirby, fox, pikachu, luigi, ness, captainFalcon, jigglypuff,
-          peach, daisy, bowser, iceClimbers, sheik, zelda, drMario, pichu, falco, marth, lucina, youngLink, ganondorf,
-          mewtwo, roy, chrom, mrGameAndWatch, metaKnight, pit, darkPit, zeroSuitSamus, wario, snake, ike, pokemonTrainer, diddyKong,
-          lucas, sonic, kingDedede, olimar, lucario, rob, toonLink, wolf, villager, megaMan, wiiFitTrainer, rosalina, littleMac,
-          greninja, palutena, pacMan, tactician, shulk, bowserJr, duckHunt, ryu, ken, cloud, corrin, bayonetta, inkling,
-          ridley, simon, richter, kingKRool, isabelle, incineroar, piranhaPlant, joker, hero, banjoAndKazooie, terry, byleth, miiBrawler, miiSwordfighter, miiGunner],
-    row1: [mario, donkeyKong, link, samus, darkSamus, yoshi, kirby, fox, pikachu, luigi, ness, captainFalcon],
-    row2: [jigglypuff, peach, daisy, bowser, iceClimbers, sheik, zelda, drMario, pichu, falco, marth, lucina],
-    row3: [youngLink, ganondorf, mewtwo, roy, chrom, mrGameAndWatch, metaKnight, pit, darkPit, zeroSuitSamus, wario, snake],
-    row4: [ike, pokemonTrainer, diddyKong, lucas, sonic, kingDedede, olimar, lucario, rob, toonLink, wolf, villager],
-    row5: [megaMan, wiiFitTrainer, rosalina, littleMac, greninja, palutena, pacMan, tactician, shulk, bowserJr, duckHunt, ryu],
-    row6: [ken, cloud, corrin, bayonetta, inkling, ridley, simon, richter, kingKRool, isabelle, incineroar, piranhaPlant],
-    row7: [joker, hero, banjoAndKazooie, terry, byleth, miiBrawler, miiSwordfighter, miiGunner],
+    all: [mario, donkeyKong, link, samus, darkSamus, yoshi, kirby, fox, pikachu, luigi, ness, captainFalcon,
+          jigglypuff, peach, daisy, bowser, iceClimbers, sheik, zelda, drMario, pichu, falco, marth, lucina,
+          youngLink, ganondorf, mewtwo, roy, chrom, mrGameAndWatch, metaKnight, pit, darkPit, zeroSuitSamus, wario, snake,
+          ike, pokemonTrainer, diddyKong, lucas, sonic, kingDedede, olimar, lucario, rob, toonLink, wolf, villager,
+          megaMan, wiiFitTrainer, rosalina, littleMac, greninja, palutena, pacMan, tactician, shulk, bowserJr, duckHunt, ryu,
+          ken, cloud, corrin, bayonetta, inkling, ridley, simon, richter, kingKRool, isabelle, incineroar, piranhaPlant,
+          joker, hero, banjoAndKazooie, terry, byleth, minMin, steve, sephiroth, pyraAndMythra, kazuya, sora, miiBrawler, miiSwordfighter, miiGunner],
+    row1: [mario, donkeyKong, link, samus, darkSamus, yoshi, kirby, fox, pikachu, luigi, ness, captainFalcon, jigglypuff],
+    row2: [peach, daisy, bowser, iceClimbers, sheik, zelda, drMario, pichu, falco, marth, lucina, youngLink, ganondorf],
+    row3: [mewtwo, roy, chrom, mrGameAndWatch, metaKnight, pit, darkPit, zeroSuitSamus, wario, snake, ike, pokemonTrainer, diddyKong],
+    row4: [lucas, sonic, kingDedede, olimar, lucario, rob, toonLink, wolf, villager, megaMan, wiiFitTrainer, rosalina, littleMac],
+    row5: [greninja, palutena, pacMan, tactician, shulk, bowserJr, duckHunt, ryu, ken, cloud, corrin, bayonetta, inkling],
+    row6: [ridley, simon, richter, kingKRool, isabelle, incineroar, piranhaPlant, joker, hero, banjoAndKazooie, terry, byleth, minMin],
+    row7: [steve, sephiroth, pyraAndMythra, kazuya, sora, miiBrawler, miiSwordfighter, miiGunner],
     selected: defaultSelection,
+    chancesOfSelected: 100,
+    fighterData: [],
+    fighterKeyNameToIndexLibrary: {},
+    fighterDataLoaded: false,
     squadSelected: [],
     opponent: defaultOpponent,
     counters: [],
@@ -116,6 +127,18 @@ const Roster = {
     defaultSelection4: defaultSelection4,
     defaultSelection5: defaultSelection5,
     defaultOpponent: defaultOpponent
+  },
+  groups: {
+    blackHand: {
+      fighters: [megaMan, inkling, wolf, minMin, daisy, peach],
+      groupRollingFavor: 0,
+      groupSelectionChances: 0
+    },
+    offHand: {
+      fighters: [lucina, samus, mario, piranhaPlant, captainFalcon],
+      groupRollingFavor: 0,
+      groupSelectionChances: 0
+    }
   },
   /*teams: [
     {teamName: "Heroes", fighters: "mario", "donkeyKong", "link", "samus", "yoshi", "kirby", "fox", "pikachu", "luigi", "ness", "captainFalcon", "jigglypuff", "peach", "daisy",
@@ -210,6 +233,12 @@ const Roster = {
   banjoAndKazooie: banjoAndKazooie,
   terry: terry,
   byleth: byleth,
+  minMin: minMin,
+  steve: steve,
+  sephiroth: sephiroth,
+  pyraAndMythra: pyraAndMythra,
+  kazuya: kazuya,
+  sora: sora,
   miiSwordfighter: miiSwordfighter,
   miiBrawler: miiBrawler,
   miiGunner: miiGunner,
@@ -234,11 +263,53 @@ const Roster = {
     this.fighters.opponent = fighter;
   },
 
-  updatePlayMetrics(opponentKeyName, mode) {
-    for (let i=0; i<this.fighters.all.length; i++) {
-      this.fighters.all[i].updatePlayMetric(opponentKeyName, mode);
+  updateFightersLoadedCount() {
+    this.fighters.fightersLoaded++;
+  },
+
+  handleFighterResponse(fighter, mode) {
+    console.log(`Loading ${fighter.name}`);
+    this.fighters.fighterData.push(fighter);
+    console.log(this.fighters.fighterData);
+    this.fighters.fighterKeyNameToIndexLibrary[fighter.name] = this.fighters.fighterData.length - 1;
+    console.log(this.fighters.fighterKeyNameToIndexLibrary);
+    if (fighter.key_name) {
+      this[fighter.key_name].loadStatus(fighter.preference, fighter.current_favor, fighter.champion_rating);
     }
+    console.log(`There are ${this.fighters.all.length} fighters total`);
+    console.log(`There are ${this.fighters.fighterData.length} fighters loaded`);
+    if (this.fighters.fighterData.length === this.fighters.all.length) {
+      this.allFightersLoaded = true;
+      this.updatePlayMetrics(this.fighters.opponent.KeyName, mode);
+    }
+  },
+
+  updatePlayMetrics(opponentKeyName, mode) {
+    this.fighters.all.forEach(fighter => {
+      fighter.updatePlayMetric(opponentKeyName, mode);
+    });
     this.playMetricTotal = this.findPlayMetricTotal();
+  },
+
+  findGroupMetrics() {
+    this.groups.blackHand.groupRollingFavor = 0;
+    this.groups.offHand.groupRollingFavor = 0;
+    this.groups.blackHand.fighters.forEach(fighter => {
+      console.log(`Adding ${fighter.name}'s ${fighter.rollingFavor} to the total of ${this.groups.blackHand.groupRollingFavor}`);
+      this.groups.blackHand.groupRollingFavor += fighter.rollingFavor;
+    });
+    this.groups.blackHand.groupSelectionChances = Number.parseFloat((this.groups.blackHand.groupRollingFavor / this.playMetricTotal) * 100).toFixed(2);
+    this.groups.offHand.fighters.forEach(fighter => {
+      this.groups.offHand.groupRollingFavor += fighter.rollingFavor;
+    });
+    this.groups.offHand.groupSelectionChances = Number.parseFloat((this.groups.offHand.groupRollingFavor / this.playMetricTotal) * 100).toFixed(2);
+  },
+
+  updateRosterSelectionChances(totalRosterFavor) {
+    for (let i=0; i<this.fighters.all.length; i++) {
+      this.fighters.all[i].updateSelectionChances(totalRosterFavor);
+    }
+    //this.playMetricTotal = this.findPlayMetricTotal();
   },
 
   addFighterBaseFavor(fighter) {
@@ -247,20 +318,20 @@ const Roster = {
 
   findPlayMetricTotal() {
     let playMetricTotal = 0;
-    for (let i=0; i<this.fighters.all.length; i++) {
-      playMetricTotal += this.fighters.all[i].playMetric;
-    }
+    this.fighters.all.forEach(fighter => {
+      playMetricTotal += fighter.playMetric;
+    });
     return playMetricTotal;
   },
 
   findMaxMetric() {
-    let max = 0;
-    for (let i=0; i<this.fighters.all.length; i++) {
-      if (this.fighters.all[i].playMetric > max) {
-        max = this.fighters.all[i].playMetric;
+    let maxMetric = 0;
+    this.fighters.all.forEach(fighter => {
+      if (fighter.playMetric > maxMetric) {
+        maxMetric = fighter.playMetric;
       }
-    }
-    this.maxMetric = max;
+    });
+    this.maxMetric = maxMetric;
   },
 
   randomizeFighter(opponentKeyName, mode) {
@@ -275,9 +346,10 @@ const Roster = {
       i++;
     }
     this.fighters.selected = selected;
-    for (let i=0; i<this.fighters.all.length; i++) {
-      this.fighters.all[i].favorUp();
-    }
+    this.fighters.chancesOfSelected = this.fighters.selected.selectionChances;
+    this.fighters.all.forEach(fighter => {
+      fighter.favorUp();
+    });
     this.fighters.selected.resetFavor();
     if (this.fighters.selected.hasEchoPartner) {
       this[this.fighters.selected.echoPartner].resetFavor();
@@ -299,13 +371,14 @@ const Roster = {
   },
 
   declareVictory(challengeMode) {
-    if (challengeMode == 1) {
+    if (challengeMode === 1) {
       this.fighters.selected.increaseChampionRating(2);
-    } else if (challengeMode == 2) {
+    } else if (challengeMode === 2) {
       this.fighters.selected.increaseChampionRating(1);
     } else {
-      this.fighters.selected.increaseChampionRating();
+      this.fighters.selected.increaseChampionRating(1);
       this.fighters.selected = defaultSelection;
+      this.fighters.chancesOfSelected = 100;
     }
   },
 
@@ -315,6 +388,7 @@ const Roster = {
     } else {
       this.fighters.selected.decreaseChampionRating(isChallenged);
       this.fighters.selected = defaultSelection;
+      this.fighters.chancesOfSelected = 100;
     }
   },
 
@@ -360,6 +434,42 @@ const Roster = {
       this.fighters.detailList.push(tempRoster[highestAttributeIndex]);
       tempRoster.splice(highestAttributeIndex, 1);
     }
+  },
+
+  setPreferencePositions() {
+    for (let detailListPosition = 0; detailListPosition < this.fighters.detailList.length; detailListPosition++) {
+      this.fighters.detailList[detailListPosition].setPreferencePosition(detailListPosition);
+    }
+  },
+
+  setRosterIntendedChances() {
+    let rosterTotalPreference = 0;
+    this.fighters.all.forEach(fighter => {
+      rosterTotalPreference += fighter.favor;
+    });
+    this.fighters.all.forEach(fighter => {
+      fighter.setIntendedChances(fighter.favor/rosterTotalPreference*100);
+    });
+  },
+
+  findMaxChancesDifference() {
+    let maxChancesDifference = 0;
+    let maxChances = 0;
+    let minChances = 0;
+    this.fighters.detailList.forEach(fighter => {
+      if (Math.abs(fighter.selectionChances - fighter.intendedChances) > maxChancesDifference) {
+        maxChancesDifference = Math.abs(fighter.selectionChances - fighter.intendedChances);
+      }
+      if (Math.abs(fighter.selectionChances - fighter.intendedChances) > maxChances) {
+        maxChances = Math.abs(fighter.selectionChances - fighter.intendedChances);
+      }
+      if (Math.abs(fighter.selectionChances - fighter.intendedChances) < minChances) {
+        minChances = Math.abs(fighter.selectionChances - fighter.intendedChances);
+      }
+    });
+    this.fighters.maxChancesDifference = maxChancesDifference;
+    this.fighters.maxChances = maxChances;
+    this.fighters.minChances = minChances;
   }
 };
 

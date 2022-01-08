@@ -1,6 +1,8 @@
 import React from 'react';
 import './Fighter.css';
 
+//        <img src={this.props.image} style={{/*opacity: this.props.playMetric / this.props.maxMetric,*/ top: "0px", position: "absolute", zIndex: -1}}></img>
+
 class Fighter extends React.Component {
   render() {
 
@@ -19,14 +21,14 @@ class Fighter extends React.Component {
       }
     } else {
       nameSpacing = {
-        top: 108
+        top: 90
       }
     }
 
     return (
       <div className="fighter box" style={styles}>
         <div className="metric">{this.props.counterRow ? this.props.counterRating : <div></div>}</div>
-        <div className="name" style={nameSpacing}>{this.props.name}</div>
+        <div className="name" style={nameSpacing}>{this.props.name}<br/>{this.props.selectionChances}%</div>
       </div>
     );
   }

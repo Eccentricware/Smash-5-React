@@ -22,11 +22,15 @@ class Matchup extends React.Component {
   render() {
     return (
       <div className="matchup">
-        <Fighter image={this.props.selected.image} name={this.props.selected.name} championRating="255" playMetric={this.props.selected.playMetric} maxMetric="1"/>
+        <Fighter image={this.props.selected.image} name={this.props.selected.name}
+          selectionChances={this.props.chancesOfSelected}
+          championRating="255" playMetric={this.props.selected.playMetric} maxMetric="1"/>
         <div className="vsFlairContainer" onClick={this.handleVsDisplayClick}>
           <div className="vsFlair"></div>
         </div>
-        <Fighter image={this.props.opponent.defaultImg} championRating="0"  playMetric={this.props.selected.playMetric} maxMetric="1"/>
+        <Fighter image={this.props.opponent.defaultImg} championRating="0"
+          selectionChances={0}
+          playMetric={this.props.selected.playMetric} maxMetric="1"/>
         <ModeSelector selectMode={this.props.selectMode} />
         {this.props.resultWaiting ?
           <div>

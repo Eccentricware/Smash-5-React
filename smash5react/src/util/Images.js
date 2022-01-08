@@ -616,6 +616,54 @@ import byleth5 from '../Images/Byleth5.png';
 import byleth6 from '../Images/Byleth6.png';
 import byleth7 from '../Images/Byleth7.png';
 import byleth8 from '../Images/Byleth8.png';
+import minMin1 from '../Images/MinMin1.png';
+import minMin2 from '../Images/MinMin2.png';
+import minMin3 from '../Images/MinMin3.png';
+import minMin4 from '../Images/MinMin4.png';
+import minMin5 from '../Images/MinMin5.png';
+import minMin6 from '../Images/MinMin6.png';
+import minMin7 from '../Images/MinMin7.png';
+import minMin8 from '../Images/MinMin8.png';
+import steve1 from '../Images/Steve1.png';
+import steve2 from '../Images/Steve2.png';
+import steve3 from '../Images/Steve3.png';
+import steve4 from '../Images/Steve4.png';
+import steve5 from '../Images/Steve5.png';
+import steve6 from '../Images/Steve6.png';
+import steve7 from '../Images/Steve7.png';
+import steve8 from '../Images/Steve8.png';
+import sephiroth1 from '../Images/Sephiroth1.png';
+import sephiroth2 from '../Images/Sephiroth2.png';
+import sephiroth3 from '../Images/Sephiroth3.png';
+import sephiroth4 from '../Images/Sephiroth4.png';
+import sephiroth5 from '../Images/Sephiroth5.png';
+import sephiroth6 from '../Images/Sephiroth6.png';
+import sephiroth7 from '../Images/Sephiroth7.png';
+import sephiroth8 from '../Images/Sephiroth8.png';
+import pyraAndMythra1 from '../Images/PyraAndMythra1.png';
+import pyraAndMythra2 from '../Images/PyraAndMythra2.png';
+import pyraAndMythra3 from '../Images/PyraAndMythra3.png';
+import pyraAndMythra4 from '../Images/PyraAndMythra4.png';
+import pyraAndMythra5 from '../Images/PyraAndMythra5.png';
+import pyraAndMythra6 from '../Images/PyraAndMythra6.png';
+import pyraAndMythra7 from '../Images/PyraAndMythra7.png';
+import pyraAndMythra8 from '../Images/PyraAndMythra8.png';
+import kazuya1 from '../Images/Kazuya1.png';
+import kazuya2 from '../Images/Kazuya2.png';
+import kazuya3 from '../Images/Kazuya3.png';
+import kazuya4 from '../Images/Kazuya4.png';
+import kazuya5 from '../Images/Kazuya5.png';
+import kazuya6 from '../Images/Kazuya6.png';
+import kazuya7 from '../Images/Kazuya7.png';
+import kazuya8 from '../Images/Kazuya8.png';
+import sora1 from '../Images/Sora1.png';
+import sora2 from '../Images/Sora2.png';
+import sora3 from '../Images/Sora3.png';
+import sora4 from '../Images/Sora4.png';
+import sora5 from '../Images/Sora5.png';
+import sora6 from '../Images/Sora6.png';
+import sora7 from '../Images/Sora7.png';
+import sora8 from '../Images/Sora8.png';
 import miiBrawlerImg from '../Images/MiiBrawlerImg.png';
 import miiBrawlerDefault from '../Images/MiiBrawlerDefault.png';
 import miiSwordfighterImg from '../Images/MiiSwordfighterImg.png';
@@ -701,6 +749,12 @@ const Images = {
   banjoAndKazooie: [banjoAndKazooie1, banjoAndKazooie2, banjoAndKazooie3, banjoAndKazooie4, banjoAndKazooie5, banjoAndKazooie6, banjoAndKazooie7, banjoAndKazooie8],
   terry: [terry1, terry2, terry3, terry4, terry5, terry6, terry7, terry8],
   byleth: [byleth1, byleth2, byleth3, byleth4, byleth5, byleth6, byleth7, byleth8],
+  minMin: [minMin1, minMin2, minMin3, minMin4, minMin5, minMin6, minMin7, minMin8],
+  steve: [steve1, steve2, steve3, steve4, steve5, steve6, steve7, steve8],
+  sephiroth: [sephiroth1, sephiroth2, sephiroth3, sephiroth4, sephiroth5, sephiroth6, sephiroth7, sephiroth8],
+  pyraAndMythra: [pyraAndMythra1, pyraAndMythra2, pyraAndMythra3, pyraAndMythra4, pyraAndMythra5, pyraAndMythra6, pyraAndMythra7, pyraAndMythra8],
+  kazuya: [kazuya1, kazuya2, kazuya3, kazuya4, kazuya5, kazuya6, kazuya7, kazuya8],
+  sora: [sora1, sora2, sora3, sora4, sora5, sora6, sora7, sora8],
   miiBrawler: [miiBrawlerImg, miiBrawlerImg, miiBrawlerImg, miiBrawlerImg, miiBrawlerImg, miiBrawlerImg, miiBrawlerImg, miiBrawlerImg],
   miiSwordfighter: [miiSwordfighterImg, miiSwordfighterImg, miiSwordfighterImg, miiSwordfighterImg, miiSwordfighterImg, miiSwordfighterImg, miiSwordfighterImg, miiSwordfighterImg],
   miiGunner: [miiGunnerImg, miiGunnerImg, miiGunnerImg, miiGunnerImg, miiGunnerImg, miiGunnerImg, miiGunnerImg, miiGunnerImg],
@@ -784,6 +838,12 @@ const Images = {
     banjoAndKazooie: banjoAndKazooie5,
     terry: terry5,
     byleth: byleth3,
+    minMin: minMin6,
+    steve: steve1,
+    sephiroth: sephiroth1,
+    pyraAndMythra: pyraAndMythra1,
+    kazuya: kazuya1,
+    sora: sora1,
     miiBrawler: miiBrawlerDefault,
     miiSwordfighter: miiSwordfighterDefault,
     miiGunner: miiGunnerDefault,

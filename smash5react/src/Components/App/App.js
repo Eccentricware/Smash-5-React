@@ -3,7 +3,7 @@ import './App.css';
 import Roster from '../../util/Roster';
 import Matchup from '../Matchup/Matchup';
 import CharacterSelect from '../CharacterSelect/CharacterSelect';
-import FighterDetailsList from '../FighterDetailsList/FighterDetailsList';
+import SharesDisplay from '../SharesDisplay/SharesDisplay';
 import Counters from '../Counters/Counters';
 
 class App extends React.Component {
@@ -19,7 +19,9 @@ class App extends React.Component {
     this.state = {
       mode: Roster.mode,
       roster: Roster.fighters,
+      groups: Roster.groups,
       selected: Roster.fighters.selected,
+      chancesOfSelected: Roster.fighters.chancesOfSelected,
       resultWaiting: false,
       isChallenged: false,
       challengeMode: 0,
@@ -53,15 +55,15 @@ class App extends React.Component {
   }
 
   setChallengedState(challengeMode) {
-    if (challengeMode == 0) {
+    if (challengeMode === 0) {
      this.setState({isChallenged: false});
-   } else if (challengeMode == 1) {
+   } else if (challengeMode === 1) {
       this.setState({
         isChallenged: true,
         challengeMode: 1,
         opponent: Roster.fighters.defaultSelection
       });
-    } else if (challengeMode == 2) {
+    } else if (challengeMode === 2) {
       this.setState({
         isChallenged: true,
         challengeMode: 2,
@@ -75,8 +77,12 @@ class App extends React.Component {
     Roster.updatePlayMetrics(Roster.fighters.opponent.keyName, this.state.mode);
     Roster.findMaxMetric();
     Roster.saveMetrics();
+    Roster.updateRosterSelectionChances(Roster.playMetricTotal);
+    Roster.findGroupMetrics();
+    Roster.findMaxChancesDifference();
     this.setState({
       selected: Roster.fighters.selected,
+      chancesOfSelected: Roster.fighters.chancesOfSelected,
       maxMetric: Roster.maxMetric,
       resultWaiting: true
      });
@@ -87,11 +93,13 @@ class App extends React.Component {
     if (this.state.isChallenged) {
       this.setState({
         selected: Roster.fighters.selected,
+        chancesOfSelected: Roster.fighters.chancesOfSelected,
         resultWaiting: true
       });
     } else {
       this.setState({
         selected: Roster.fighters.defaultSelection,
+        chancesOfSelected: Roster.fighters.chancesOfSelected,
         resultWaiting: false
       });
     }
@@ -102,11 +110,13 @@ class App extends React.Component {
     if (this.state.isChallenged) {
       this.setState({
         selected: Roster.fighters.selected,
+        chancesOfSelected: Roster.fighters.chancesOfSelected,
         resultWaiting: true
       })
     } else {
       this.setState({
         selected: Roster.fighters.selected,
+        chancesOfSelected: Roster.fighters.chancesOfSelected,
         resultWaiting: false
       });
     }
@@ -118,12 +128,16 @@ class App extends React.Component {
     this.setState({
       displayModeIndex: displayModeIndex,
     });
-    if (this.state.displayModes[this.displayModeIndex] = "characterDetails") {
+    if (this.state.displayModes[this.displayModeIndex] === "characterDetails") {
       Roster.sortDetailList('favor');
+      Roster.setPreferencePositions();
+      Roster.setRosterIntendedChances();
+      Roster.findMaxChancesDifference();
     }
   }
 
   componentWillMount() {
+
     Roster.fighters.all.forEach(fighter => {
       fetch(`http://localhost:8000/fighter/${fighter.id}/`, {
         headers: {
@@ -138,6 +152,20 @@ class App extends React.Component {
         }
       }, networkError => console.log(networkError.message)
       ).then(fighterData => {
+        Roster.handleFighterResponse(fighterData, this.state.mode);
+        if (Roster.allFightersLoaded) {
+          console.log(Roster.allFightersLoaded);
+          Roster.findMaxMetric();
+          Roster.updateRosterSelectionChances(Roster.playMetricTotal);
+          Roster.findGroupMetrics();
+          this.setState({
+            roster: Roster.fighters,
+            maxMetric: Roster.maxMetric,
+            playMetricTotal: Roster.playMetricTotal,
+            playMetricBaseTotal: Roster.playMetricBaseTotal
+          });
+        }
+        /*
         fighter.loadStatus(fighterData.preference, fighterData.current_favor, fighterData.champion_rating);
         fighter.matchups['mario'] = fighterData.mario;
         fighter.matchups['donkeyKong'] = fighterData.donkey_kong;
@@ -221,16 +249,7 @@ class App extends React.Component {
         fighter.matchups['hero'] = fighterData.hero;
         fighter.matchups['banjoAndKazooie'] = fighterData.banjo_and_kazooie;
         fighter.matchups['terry'] = fighterData.terry;
-      }).then(() => {
-        Roster.updatePlayMetrics(Roster.fighters.opponent.keyName, this.state.mode);
-        Roster.addFighterBaseFavor(fighter);
-        Roster.findMaxMetric();
-        this.setState({
-          roster: Roster.fighters,
-          maxMetric: Roster.maxMetric,
-          playMetricTotal: Roster.playMetricTotal,
-          playMetricBaseTotal: Roster.playMetricBaseTotal
-        });
+        */
       });
     });
   }
@@ -244,6 +263,16 @@ class App extends React.Component {
           <div>
             <CharacterSelect roster={this.state.roster} opponent={this.state.opponent} maxMetric={this.state.maxMetric} />
             <Counters roster={this.state.roster} opponent={this.state.opponent}/>
+            <div className="fighter-groups-chances">
+              <div className="group-chances-display">Black Hand:</div>
+              <div className="group-chances-display">{this.state.groups.blackHand.groupSelectionChances}%</div>
+              <div className="group-chances-display">Off Hand:</div>
+              <div className="group-chances-display">{this.state.groups.offHand.groupSelectionChances}%</div>
+              <div className="group-chances-display">Stragglers:</div>
+              <div className="group-chances-display">{
+                Number.parseFloat(100 - this.state.groups.blackHand.groupSelectionChances - this.state.groups.offHand.groupSelectionChances).toFixed(2)
+              }%</div>
+            </div>
           </div>
             :
           null
@@ -251,11 +280,24 @@ class App extends React.Component {
         {
           this.state.displayModes[this.state.displayModeIndex] === "characterDetails"
             ?
-          <FighterDetailsList detailList={this.state.roster.detailList} playMetricTotal={this.state.playMetricTotal} playMetricBaseTotal={this.state.playMetricBaseTotal}/>
+            <div>
+              <SharesDisplay roster={this.state.roster} />
+              <div className="fighter-groups-chances">
+                <div className="group-chances-display">Black Hand:</div>
+                <div className="group-chances-display">{this.state.groups.blackHand.groupSelectionChances}%</div>
+                <div className="group-chances-display">Off Hand:</div>
+                <div className="group-chances-display">{this.state.groups.offHand.groupSelectionChances}%</div>
+                <div className="group-chances-display">Stragglers:</div>
+                <div className="group-chances-display">{
+                  Number.parseFloat(100 - this.state.groups.blackHand.groupSelectionChances - this.state.groups.offHand.groupSelectionChances).toFixed(2)
+                }%</div>
+            </div>
+          </div>
             :
           null
         }
         <Matchup roster={this.state.roster} selected={this.state.selected} opponent={this.state.opponent}
+          chancesOfSelected={this.state.chancesOfSelected}
           selectMode={this.selectMode} selectOpponent={this.selectOpponent} setChallengedState={this.setChallengedState} mysteryOpponent={this.state.mysteryOpponent}
           randomizer={this.randomizer} maxMetric={this.state.maxMetric} resultWaiting={this.state.resultWaiting}
           declareVictory={this.declareVictory} declareDefeat={this.declareDefeat}

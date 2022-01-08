@@ -1,0 +1,16 @@
+.shares-display {
+  color: white;
+  border-color: white;
+  border-style: solid;
+  border-width: 1px;
+  position: absolute;
+  left: 2px;
+}
+
+.display-frame {
+  border-color: white;
+  border-style: solid;
+  border-width: 1px;
+  position: absolute;
+  left: 2px;
+}
