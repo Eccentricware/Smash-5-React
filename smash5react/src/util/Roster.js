@@ -130,12 +130,12 @@ const Roster = {
   },
   groups: {
     blackHand: {
-      fighters: [megaMan, inkling, wolf, minMin, daisy, peach],
+      fighters: [megaMan, inkling, wolf, link, daisy, peach],
       groupRollingFavor: 0,
       groupSelectionChances: 0
     },
     offHand: {
-      fighters: [lucina, samus, mario, piranhaPlant, captainFalcon],
+      fighters: [byleth, miiSwordfighter, minMin, mario, lucina],
       groupRollingFavor: 0,
       groupSelectionChances: 0
     }

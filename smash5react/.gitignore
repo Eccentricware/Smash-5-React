@@ -3,6 +3,9 @@
 # dependencies
 /node_modules
 
+# pschache
+/s5rb/fighter/__pychache__/
+
 # testing
 /coverage
 
