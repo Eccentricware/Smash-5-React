@@ -2,6 +2,7 @@ from django.db import models
 
 class Fighter(models.Model):
     name = models.CharField(max_length=20, blank=False, null=True)
+    key_name = models.CharField(max_length=20, blank=False, null=True)
     smash_id = models.CharField(max_length=4, blank=False, null=True)
     preference = models.IntegerField(default=0)
     current_favor = models.IntegerField(default=0)
